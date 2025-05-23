@@ -1,40 +1,47 @@
 
 import { ChartBar, Bot, Award, Brain } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 interface FeaturesProps {
   setActiveSection: (section: string) => void;
 }
 
 const Features = ({ setActiveSection }: FeaturesProps) => {
+  const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
+  
   const features = [
     {
       icon: ChartBar,
       title: 'Performance Tracking Engine',
       description: 'Analyzes your sales data, quiz scores, and training engagement to identify areas for improvement',
       gradient: 'from-emerald-500 to-emerald-600',
-      onClick: () => setActiveSection('dashboard')
+      onClick: () => setActiveSection('dashboard'),
+      demoText: 'View your personalized dashboard'
     },
     {
       icon: Bot,
       title: 'AI Learning Coach',
       description: 'Delivers personalized micro-content, simulations, and interactive exercises right when you need them',
       gradient: 'from-teal-500 to-teal-600',
-      onClick: () => setActiveSection('ai-coach')
+      onClick: () => setActiveSection('ai-coach'),
+      demoText: 'Chat with your AI coach'
     },
     {
       icon: Brain,
       title: 'Scenario Simulations',
       description: 'Practice dealing with common objections and sales scenarios through interactive AI role-playing',
       gradient: 'from-green-500 to-green-600',
-      onClick: () => setActiveSection('ai-coach')
+      onClick: () => setActiveSection('ai-coach'),
+      demoText: 'Try a sales simulation'
     },
     {
       icon: Award,
       title: 'Gamified Achievements',
       description: 'Earn badges, unlock levels, and track your progress as you master different financial products',
       gradient: 'from-cyan-500 to-cyan-600',
-      onClick: () => setActiveSection('dashboard')
+      onClick: () => setActiveSection('dashboard'),
+      demoText: 'See your achievements'
     }
   ];
 
@@ -92,6 +99,8 @@ const Features = ({ setActiveSection }: FeaturesProps) => {
             <motion.div
               key={index}
               variants={itemVariants}
+              onMouseEnter={() => setHoveredFeature(index)}
+              onMouseLeave={() => setHoveredFeature(null)}
               onClick={feature.onClick}
               className="group bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer"
               whileHover={{ 
@@ -103,7 +112,18 @@ const Features = ({ setActiveSection }: FeaturesProps) => {
                 <feature.icon className="text-white" size={28} />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+              <p className="text-gray-600 leading-relaxed mb-4">{feature.description}</p>
+              <div className={`mt-2 transition-all duration-300 ${hoveredFeature === index ? 'opacity-100' : 'opacity-0'}`}>
+                <button 
+                  className={`bg-gradient-to-r ${feature.gradient} text-white px-4 py-2 rounded-lg font-medium transform transition hover:shadow-lg`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    feature.onClick();
+                  }}
+                >
+                  {feature.demoText}
+                </button>
+              </div>
             </motion.div>
           ))}
         </motion.div>
