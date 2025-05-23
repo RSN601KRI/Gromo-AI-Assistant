@@ -1,5 +1,5 @@
 
-import { BookOpen, Target, ShoppingBag, MessageSquare } from 'lucide-react';
+import { ChartBar, Bot, Award, Brain } from 'lucide-react';
 
 interface FeaturesProps {
   setActiveSection: (section: string) => void;
@@ -8,32 +8,32 @@ interface FeaturesProps {
 const Features = ({ setActiveSection }: FeaturesProps) => {
   const features = [
     {
-      icon: BookOpen,
-      title: 'AI-Powered Learning',
-      description: 'Personalized training that adapts to your performance and identifies areas for improvement',
+      icon: ChartBar,
+      title: 'Performance Tracking Engine',
+      description: 'Analyzes your sales data, quiz scores, and training engagement to identify areas for improvement',
       gradient: 'from-emerald-500 to-emerald-600',
-      onClick: () => setActiveSection('ai-coach')
-    },
-    {
-      icon: Target,
-      title: 'Smart Lead Generation',
-      description: 'AI-driven lead scoring and automated follow-up systems to maximize conversion rates',
-      gradient: 'from-teal-500 to-teal-600',
       onClick: () => setActiveSection('dashboard')
     },
     {
-      icon: ShoppingBag,
-      title: 'Product Catalog',
-      description: 'Access to dozens of top financial brands with seamless onboarding and processing',
-      gradient: 'from-green-500 to-green-600',
-      onClick: () => setActiveSection('products')
+      icon: Bot,
+      title: 'AI Learning Coach',
+      description: 'Delivers personalized micro-content, simulations, and interactive exercises right when you need them',
+      gradient: 'from-teal-500 to-teal-600',
+      onClick: () => setActiveSection('ai-coach')
     },
     {
-      icon: MessageSquare,
-      title: 'Real-time Support',
-      description: 'Intelligent coaching and responsive support workflows for confident selling',
-      gradient: 'from-cyan-500 to-cyan-600',
+      icon: Brain,
+      title: 'Scenario Simulations',
+      description: 'Practice dealing with common objections and sales scenarios through interactive AI role-playing',
+      gradient: 'from-green-500 to-green-600',
       onClick: () => setActiveSection('ai-coach')
+    },
+    {
+      icon: Award,
+      title: 'Gamified Achievements',
+      description: 'Earn badges, unlock levels, and track your progress as you master different financial products',
+      gradient: 'from-cyan-500 to-cyan-600',
+      onClick: () => setActiveSection('dashboard')
     }
   ];
 
@@ -42,10 +42,10 @@ const Features = ({ setActiveSection }: FeaturesProps) => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Powerful Features for FinSage Partners
+            Smart Features for Continuous Growth
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Transform from traditional agent-led selling to AI-powered financial distribution with our intelligent platform
+            Transform from traditional agent-led learning to AI-powered, personalized micro-learning that adapts to your needs
           </p>
         </div>
 

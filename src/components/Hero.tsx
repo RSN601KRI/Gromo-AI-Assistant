@@ -7,39 +7,39 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            AI-Powered{' '}
+            Meet{' '}
             <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-              Financial Coaching
+              GroMoCoach
             </span>{' '}
-            for Agents
+            - Your AI Learning Companion
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-            FinSage transforms traditional agents into AI-empowered financial advisors, driving inclusion 
-            and entrepreneurial success across Bharat.
+            Transform from passive learner to high-performing financial advisor with an AI tutor 
+            that delivers personalized, bite-sized learning exactly when you need it.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <button className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
-              Become a FinSage Partner
+              Become a GroMoCoach Partner
             </button>
             <button className="border-2 border-emerald-600 text-emerald-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-emerald-50 transition-all duration-200">
-              Learn More
+              Experience AI Learning
             </button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
             <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20">
-              <div className="text-3xl font-bold text-emerald-600 mb-2">80%</div>
-              <p className="text-gray-700">of Bharat prefers buying financial products from trusted Agents</p>
+              <div className="text-3xl font-bold text-emerald-600 mb-2">Smart</div>
+              <p className="text-gray-700">Analyzes your performance data to identify specific areas for improvement</p>
             </div>
             <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20">
-              <div className="text-3xl font-bold text-teal-600 mb-2">1-Stop</div>
-              <p className="text-gray-700">shop for everything partners need to run their business from their phone</p>
+              <div className="text-3xl font-bold text-teal-600 mb-2">Timely</div>
+              <p className="text-gray-700">Delivers micro-learning content exactly when you need it, right after interactions</p>
             </div>
             <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20">
-              <div className="text-3xl font-bold text-emerald-600 mb-2">AI-Powered</div>
-              <p className="text-gray-700">intelligent systems that guide, coach, and assist at every step</p>
+              <div className="text-3xl font-bold text-emerald-600 mb-2">Personalized</div>
+              <p className="text-gray-700">Adapts to your learning style, performance patterns and product knowledge gaps</p>
             </div>
           </div>
         </div>
