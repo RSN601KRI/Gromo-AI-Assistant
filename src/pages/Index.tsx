@@ -13,7 +13,7 @@ const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
       <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
       
       {activeSection === 'home' && (

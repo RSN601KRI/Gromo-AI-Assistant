@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Database, Star } from 'lucide-react';
 
 interface NavbarProps {
   activeSection: string;
@@ -22,10 +22,15 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              GroMo
+            <div className="flex items-center">
+              <div className="rounded-lg bg-gradient-to-tr from-emerald-500 to-teal-400 p-2 mr-2 shadow-lg">
+                <Star className="text-white" size={20} />
+              </div>
+              <div className="text-2xl font-bold bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
+                FinSage
+              </div>
             </div>
-            <span className="ml-2 text-sm text-gray-600 font-medium">FinAI Platform</span>
+            <span className="ml-2 text-sm text-gray-600 font-medium">AI Partner</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -36,14 +41,14 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
                 onClick={() => setActiveSection(item.id)}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   activeSection === item.id
-                    ? 'bg-white/20 text-blue-600 shadow-lg'
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-white/10'
+                    ? 'bg-white/20 text-emerald-600 shadow-lg'
+                    : 'text-gray-700 hover:text-emerald-600 hover:bg-white/10'
                 }`}
               >
                 {item.label}
               </button>
             ))}
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+            <button className="bg-gradient-to-r from-emerald-500 to-teal-400 text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-200">
               Get Started
             </button>
           </div>
@@ -52,7 +57,7 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-white/10 transition-colors"
+              className="p-2 rounded-lg text-gray-600 hover:text-emerald-600 hover:bg-white/10 transition-colors"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -71,14 +76,14 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
                 }}
                 className={`block w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-all ${
                   activeSection === item.id
-                    ? 'bg-white/20 text-blue-600'
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-white/10'
+                    ? 'bg-white/20 text-emerald-600'
+                    : 'text-gray-700 hover:text-emerald-600 hover:bg-white/10'
                 }`}
               >
                 {item.label}
               </button>
             ))}
-            <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-medium mt-4">
+            <button className="w-full bg-gradient-to-r from-emerald-500 to-teal-400 text-white px-6 py-2 rounded-lg font-medium mt-4">
               Get Started
             </button>
           </div>

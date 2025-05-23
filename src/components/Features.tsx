@@ -1,5 +1,5 @@
 
-import { Book, Calendar, MessageSquare, SquareCheck } from 'lucide-react';
+import { BookOpen, Target, ShoppingBag, MessageSquare } from 'lucide-react';
 
 interface FeaturesProps {
   setActiveSection: (section: string) => void;
@@ -8,21 +8,21 @@ interface FeaturesProps {
 const Features = ({ setActiveSection }: FeaturesProps) => {
   const features = [
     {
-      icon: Book,
+      icon: BookOpen,
       title: 'AI-Powered Learning',
       description: 'Personalized training that adapts to your performance and identifies areas for improvement',
-      gradient: 'from-blue-500 to-blue-600',
+      gradient: 'from-emerald-500 to-emerald-600',
       onClick: () => setActiveSection('ai-coach')
     },
     {
-      icon: SquareCheck,
+      icon: Target,
       title: 'Smart Lead Generation',
       description: 'AI-driven lead scoring and automated follow-up systems to maximize conversion rates',
-      gradient: 'from-purple-500 to-purple-600',
+      gradient: 'from-teal-500 to-teal-600',
       onClick: () => setActiveSection('dashboard')
     },
     {
-      icon: Calendar,
+      icon: ShoppingBag,
       title: 'Product Catalog',
       description: 'Access to dozens of top financial brands with seamless onboarding and processing',
       gradient: 'from-green-500 to-green-600',
@@ -32,7 +32,7 @@ const Features = ({ setActiveSection }: FeaturesProps) => {
       icon: MessageSquare,
       title: 'Real-time Support',
       description: 'Intelligent coaching and responsive support workflows for confident selling',
-      gradient: 'from-orange-500 to-orange-600',
+      gradient: 'from-cyan-500 to-cyan-600',
       onClick: () => setActiveSection('ai-coach')
     }
   ];
@@ -42,10 +42,10 @@ const Features = ({ setActiveSection }: FeaturesProps) => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Powerful Features for GroMo Partners
+            Powerful Features for FinSage Partners
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Transform from traditional agent-led selling to AI-powered FinAI distribution with our intelligent platform
+            Transform from traditional agent-led selling to AI-powered financial distribution with our intelligent platform
           </p>
         </div>
 
