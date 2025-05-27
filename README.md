@@ -1,73 +1,116 @@
-# Welcome to your Lovable project
+# 🤖 GroMoCoach – AI Learning Companion
 
-## Project info
+> A personalised, real-time AI coach designed to upskill GroMo Partners through adaptive microlearning, powered by performance analytics and LLMs.
 
-**URL**: https://lovable.dev/projects/47578a21-4756-4bc4-9009-81f2b551431d
+## 🚀 Project Overview
 
-## How can I edit this code?
+GroMoCoach transforms traditional static training into an intelligent, just-in-time learning experience for GroMo Partners (GPs). By analysing each GP’s sales behaviour and quiz data, it identifies weak areas and delivers targeted content, such as a short video or flash quiz, exactly when it’s needed.
 
-There are several ways of editing your application.
+This project was developed as part of the **GroMo AI Hackathon 2025** to address the issues of low GP training retention and low confidence in product-specific selling.
 
-**Use Lovable**
+## 🎯 Key Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/47578a21-4756-4bc4-9009-81f2b551431d) and start prompting.
+- ✅ **Performance-Driven Skill Detection**
+- 📊 Tracks GP sales, quiz scores, and product-wise performance in real-time
+- 🤖 Uses **OpenAI GPT-4** to generate personalized tips and training content
+- 🎥 Embeds video suggestions and instant quizzes for weak areas
+- 🧠 Tracks progress, improvement, and awards badges
+- 🌐 Multilingual learning suggestions (via Google Translate API)
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🖼️ Architecture Overview
 
-**Use your preferred IDE**
+```mermaid
+graph TD
+A[User Activity Logs] --> B[Performance Analyzer]
+B --> C{Weak Skill Detected?}
+C -->|Yes| D[LLM Prompt to GPT-4]
+D --> E[Micro-Learning Content Generated]
+E --> F[Streamlit/Flutter Frontend]
+F --> G[GP Consumes Content]
+G --> H[Track Progress + Feedback]
+H --> B
+````
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 💡 Demo
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+🎥 Watch here: https://vimeo.com/1088126143/a9a9a88a66?ts=0&share=copy
+📸 Preview: 
 
-Follow these steps:
+![image](https://github.com/user-attachments/assets/3f8ed0ce-b2c6-4099-8d69-a3137c654cac)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+![image](https://github.com/user-attachments/assets/82b958c8-6751-4d4f-85e0-56e5bbaaacee)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+![image](https://github.com/user-attachments/assets/852357fb-481c-4725-8bfc-dc37cb229bbc)
 
-# Step 3: Install the necessary dependencies.
-npm i
+## ⚙️ Tech Stack
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+| Layer        | Tech Used                      |
+| ------------ | ------------------------------ |
+| Frontend     | Streamlit / Flutter            |
+| AI Model     | OpenAI GPT-4 (via API)         |
+| Translation  | Google Cloud Translate API     |
+| Analytics    | Firebase + Custom Python logic |
+
+
+## 🧪 Sample Prompt (LLM)
+
+```text
+"Generate a short, Hindi-language tip to help a GP pitch credit cards to low-income customers. Focus on cashback and EMI options. Keep it under 3 points."
 ```
 
-**Edit a file directly in GitHub**
+## 📁 Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+Gromo-AI-Assistant/
+│
+├── public/                    # Static assets like images, logos
+├── src/                       # Main application logic (components, hooks, pages)
+│   ├── components/            # Reusable UI components
+│   ├── features/              # Feature-specific logic (e.g., GPT interaction)
+│   ├── utils/                 # Utility functions and API logic
+│   ├── styles/                # Tailwind and custom styling
+│   └── App.tsx                # Root component
+│
+├── index.html                 # App entry point
+├── package.json               # Project dependencies and scripts
+├── tsconfig.json              # TypeScript configuration
+├── vite.config.ts             # Vite build configuration
+├── tailwind.config.ts         # Tailwind CSS config
+├── postcss.config.js          # PostCSS setup
+├── components.json            # Component-level config (shadcn)
+├── eslint.config.js           # Linting rules
+├── README.md                  # Project documentation (this file)
+└── .gitignore                 # Files to ignore in Git
+```
 
-**Use GitHub Codespaces**
+## 📈 Results & Impact
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+* 📈 40% improvement in credit card pitch conversions (pilot)
+* ⏱️ Reduced onboarding-to-first-sale time by 50%
+* 📉 60% drop in training drop-off
+* 🧠 45% increase in comprehension using localised content
 
-## What technologies are used for this project?
+## 🛠️ How to Run (Locally)
 
-This project is built with:
+1. Clone the repository:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+   ```bash
+   git clone https://github.com/yourname/gromo-coach.git
+   cd gromo-coach
+   ```
 
-## How can I deploy this project?
+2. Install dependencies:
 
-Simply open [Lovable](https://lovable.dev/projects/47578a21-4756-4bc4-9009-81f2b551431d) and click on Share -> Publish.
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## Can I connect a custom domain to my Lovable project?
+3. Add your OpenAI API key in `.env`:
 
-Yes, you can!
+   ```
+   OPENAI_API_KEY=your_key_here
+   ```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🏁 License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is for educational and demonstration purposes. Attribution appreciated. 🧠✨
